@@ -1,6 +1,8 @@
 from flask import Flask, render_template
 from flask import request
 import time
+from flask import Response
+
 app = Flask(__name__)
 
 
@@ -16,19 +18,21 @@ def parsing():
     return 'filename is: '+str(filename)
 
 
-
 @app.route('/run_docker')
 def run_docker():
     client = docker.from_env()
     filename = request.args.get('filename')
-
     try:
         container = client.containers.run('opoh_docker', detach=True, environment={'File_Name': filename})
         # Wait for the script to finish executing
         container.wait()
         output = container.logs().decode('utf-8')
+        r = Response(response=output, status=200, mimetype="application/json")
+        r.headers["Content-Type"] = "application/json; charset=utf-8"
+        return r
+
         #return f"Container ID: {container.id} started with parameter: {filename}, Output: {output}"
-        return output
+        #return output
     except docker.errors.ContainerError as e:
         return f"Container failed to start. Error: {e.stderr.decode('utf-8')}", 500
     except docker.errors.ImageNotFound as e:
