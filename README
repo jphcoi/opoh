@@ -1,0 +1,5 @@
+This repo collects a set of python scripts for parsing and enriching transcript data for the OPOH project. 
+Right now, only one script if operational: parse_SYNC.py. 
+
+All the required instructions to dockerize the scripts and run them on a server are also included in the Dockerfile. 
+Simply type: docker build -t opoh_docker .
