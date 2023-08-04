@@ -2,7 +2,7 @@ This repo collects a set of python scripts for parsing and enriching transcript 
 Right now, only the parsing script is operational: parse_SYNC.py. 
 
 All the required instructions to dockerize the scripts and run them on a server are also included in the Dockerfile. 
-Simply type: `docker build -t opoh_docker` to build the docker image
+Simply type: `docker build -t opoh_docker .` to build the docker image
 
 You can run directly run this image using the following syntax
 `docker run -e File_Name="SOMEFILE.docx"  opoh_docker`
