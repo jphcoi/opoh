@@ -7,8 +7,7 @@ Simply type: `docker build -t opoh_docker .` to build the docker image
 You can run directly run this image using the following syntax
 `docker run -e File_Name="SOMEFILE.docx"  opoh_docker`
 
-Alternatively it can also be launched using a FLASK API 
-Type `flask run` to start the service, indicating the file path in the URL (parameter=filename). The HTML page will deliver the resulting JSON object. 
+Alternatively it can also be launched using a FLASK API. You need to have Flask installed in the running environment and then type `flask run` to start the service, indicating the file path in the URL (parameter=filename). The HTML page will deliver the resulting JSON object. 
 
 `http://127.0.0.1:5000/run_docker?filename=SOMEFILE.docx`
 
