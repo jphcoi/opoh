@@ -1,0 +1,5 @@
+spacy
+pandas
+bs4
+numpy
+python-docx
