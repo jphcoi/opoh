@@ -12,3 +12,4 @@ Just type flask run to start the service, indicating the file path in the URL (p
 
 `http://127.0.0.1:5000/run_docker?filename=SOMEFILE.docx`
 
+Use `git status` to list all new or modified files that haven't yet been committed.
