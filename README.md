@@ -8,7 +8,7 @@ And run it using the following syntax
 `docker run -e File_Name="SOMEFILE.docx"  opoh_docker`
 
 The docker image can then be called from a FLASK API 
-Just type flask run to start the service, indicating the file path in the URL (parameter=filename). The HTML page will deliver the resulting JSON object. 
+Just type `flask run` to start the service, indicating the file path in the URL (parameter=filename). The HTML page will deliver the resulting JSON object. 
 
 `http://127.0.0.1:5000/run_docker?filename=SOMEFILE.docx`
 
